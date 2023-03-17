@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>爱唯逸网络科技 - 系统安装引导</title>
+    <link rel="icon" href="../../assets/System/icon/favicon.ico" type="image/ico">
+    <meta name="author" content="AiWeiYi_Studio">
+    <link href="../../assets/LightYear/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/LightYear/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="../../assets/LightYear/css/style.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url("../../assets/System/img/bj.jpg") no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .box{
+            border-radius:4000px;
+        }
+        .transparent_class {
+            filter:alpha(opacity=90);
+            -moz-opacity:0.90;
+            -khtml-opacity: 0.90;
+            opacity: 0.90;
+        }
+        #title{
+            font-weight: bolder;
+        }
+        tbody > tr > td{
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <div class="container transparent_class col-xs-12 col-sm-8 col-md-8 col-lg-8 center-block" style="float: none;padding-top:20px;">
+        <div class="card">
+            <div class="panel panel-primary">
+                <div class="card-header">
+                    <h4 id="title">用户协议</h4>
+                </div>
+                <div class="card-body">
+                    <div id="page_1" style="display:none;">
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <center><strong>提示：</strong>您已经安装过，如需重新安装请删除安装锁后再安装！<a href="./tool.php">快捷删除</a></center>
+                        </div>
+                    </div>
+                    <div id="page_2" style="display:none;">
+                        <iframe src="./agreement.html" style="width:100%;height:69vh;border: none;"></iframe>
+                        <div id="page_3" style="display:inline;">
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <center><strong>请耐心阅读协议内容，还剩<span id="time">10</span>秒</strong></center>
+                            </div>
+                        </div>
+                        <div id="page_4" style="display:none;">
+                            <div class="example-box text-center">
+                                <a class="btn btn-w-md btn-round btn-danger" href="../../">不同意</a>
+                                <a class="btn btn-w-md btn-round btn-info" href="javascript:void(0);" onclick="agree();">同意</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="page_5" style="display:none;">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th style="width:10%">检测</th>
+                                    <th style="width:10%">需求</th>
+                                    <th style="width:40%">当前</th>
+                                    <th style="width:40%">用途</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>PHP</td>
+                                    <td>必须</td>
+                                    <td id="check_1"></td>
+                                    <td>PHP版本支持</td>
+                                </tr>
+                                <tr>
+                                    <td>curl_exec()</td>
+                                    <td>必须</td>
+                                    <td id="check_2"></td>
+                                    <td>抓取网页</td>
+                                </tr>
+                                <tr>
+                                    <td>file_get_contents()</td>
+                                    <td>必须</td>
+                                    <td id="check_3"></td>
+                                    <td>读取文件</td>
+                                </tr>
+                                <tr>
+                                    <td>session</td>
+                                    <td>必须</td>
+                                    <td id="check_4"></td>
+                                    <td>PHP必备功能</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="example-box text-center">
+                            <div id="page_6" style="display:none;">
+                                <a class="btn btn-w-md btn-round btn-danger" href="javascript:void(0);" onclick="shuaxin();">刷新</a>
+                            </div>
+                            <div id="page_7" style="display:none;">
+                                <a class="btn btn-w-md btn-round btn-info" href="javascript:void(0);" onclick="next_1();">下一步</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="page_8" style="display:none;">
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4">
+                                <div class="form-group">
+                                    <label for="name">数据库地址:</label>
+                                    <input type="text" class="form-control" id="db_host" value="localhost">
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-lg-4">
+                                <div class="form-group">
+                                    <label for="name">数据库端口:</label>
+                                    <input type="text" class="form-control" id="db_port" value="3306">
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-lg-4">
+                                <div class="form-group">
+                                    <label for="name">数据库用户名:</label>
+                                    <input type="text" class="form-control" id="db_user">
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-lg-4">
+                                <div class="form-group">
+                                    <label for="name">数据库密码:</label>
+                                    <input type="text" class="form-control" id="db_pwd">
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-lg-4">
+                                <div class="form-group">
+                                    <label for="name">数据库名:</label>
+                                    <input type="text" class="form-control" id="db_name">
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-lg-4">
+                                <div class="form-group">
+                                    <label for="name">系统密钥:</label>
+                                    <input type="text" class="form-control" id="token">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="example-box text-center">
+                            <a class="btn btn-w-md btn-round btn-info" href="javascript:void(0);" onclick="info();">下一步</a>
+                        </div>
+					</div>
+					<div id="page_9" style="display:none;">
+					    <div class="alert alert-danger alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <center><strong id="text_1">请先检测数据库状态</strong></center>
+                        </div>
+                        <div class="example-box text-center">
+                            <div id="page_10" style="display:inline;">
+                                <a class="btn btn-w-md btn-round btn-info" href="javascript:void(0);" onclick="mysql();">检测</a>
+                            </div>
+                            <div id="page_13" style="display:none;">
+                                <a class="btn btn-w-md btn-round btn-danger" href="javascript:void(0);" onclick="mysql(1);">清空数据安装</a>
+                            </div>
+                            <div id="page_11" style="display:none;">
+                                <a class="btn btn-w-md btn-round btn-info" href="javascript:void(0);" onclick="next_2();">导入数据库</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="page_12" style="display:none;">
+                        <div class="form-group">
+                            <label for="name">数据库端口:</label>
+                            <input type="text" class="form-control" id="username" value="admin">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">数据库用户名:</label>
+                            <input type="password" class="form-control" id="password" value="123456">
+                        </div>
+                        <div class="example-box text-center">
+                            <a class="btn btn-w-md btn-round btn-info" href="javascript:void(0);" onclick="account();">保存</a>
+                        </div>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../assets/LightYear/js/jquery.min.js"></script>
+    <script src="../../assets/Layer/layer.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            check_install();
+        });
+        function check_install() {
+            var ii = layer.load(0, {
+                shade: [0.1, '#fff']
+            });
+            $.ajax({
+                type: "GET",
+                url: "./ajax.php?act=check_install",
+                dataType: 'json',
+                success: function(data) {
+                    layer.close(ii);
+                    if (data.code == 1) {
+                        document.getElementById("page_1").style.display="inline";
+                        document.getElementById("title").innerHTML = "系统保护";
+                    }else{
+                        var time = document.getElementById('time');
+                        var t = 9;
+                        var timer = setInterval(function(){
+                            time.innerHTML = t;
+                            t--;
+                            if(t <= 0){
+                                document.getElementById("page_3").style.display="none";
+                                document.getElementById("page_4").style.display="inline";
+                            }
+                        }, 1000)
+                        document.getElementById("page_2").style.display="inline";
+                    }
+                    layer.msg(data.msg);
+                },
+                error: function(data) {
+                    layer.close(ii);
+                    layer.msg('服务器错误！');
+                    return false;
+                }
+            });
+        }
+        function agree(){
+            var iis = layer.confirm('您若点击确认，则代表已经完全同意【用户协议】内容',{
+                title:'温馨提示',
+                btn:['同意','不同意'],
+                closeBtn:0
+            },function(){
+                layer.close(iis);
+                var ii = layer.load(0, {
+                    shade: [0.1, '#fff']
+                });
+                document.getElementById("page_2").style.display="none";
+                document.getElementById("title").innerHTML = "环境检测";
+                document.getElementById("page_5").style.display="inline";
+                $.ajax({
+                    type: "GET",
+                    url: "./ajax.php?act=check_function",
+                    dataType: 'json',
+                    success: function(data) {
+                        layer.close(ii);
+                        document.getElementById("check_1").innerHTML = data.php_version.msg;
+                        document.getElementById("check_2").innerHTML = data.curl_exec.msg;
+                        document.getElementById("check_3").innerHTML = data.file_get_contents.msg;
+                        document.getElementById("check_4").innerHTML = data.SESSION.msg;
+                        if(data.php_version.code == 1 && data.file_get_contents.code == 1 && data.curl_exec.code == 1 && data.SESSION.code == 1){
+                            document.getElementById("page_6").style.display="inline";
+                            document.getElementById("page_7").style.display="inline";
+                        }else{
+                            document.getElementById("page_6").style.display="inline";
+                        }
+                    },
+                    error: function(data) {
+                        layer.close(ii);
+                        layer.msg('服务器错误！');
+                        return false;
+                    }
+                });
+            });
+        }
+        function shuaxin(){
+            var ii = layer.load(0, {
+                shade: [0.1, '#fff']
+            });
+            $.ajax({
+                type: "GET",
+                url: "./ajax.php?act=check_function",
+                dataType: 'json',
+                success: function(data) {
+                    layer.close(ii);
+                    document.getElementById("check_1").innerHTML = data.php_version.msg;
+                    document.getElementById("check_2").innerHTML = data.curl_exec.msg;
+                    document.getElementById("check_3").innerHTML = data.file_get_contents.msg;
+                    document.getElementById("check_4").innerHTML = data.SESSION.msg;
+                    if(data.php_version.code == 1 && data.file_get_contents.code == 1 && data.curl_exec.code == 1 && data.SESSION.code == 1){
+                        document.getElementById("page_7").style.display="inline";
+                    }else{
+                        document.getElementById("page_6").style.display="inline";
+                    }
+                },
+                error: function(data) {
+                    layer.close(ii);
+                    layer.msg('服务器错误！');
+                    return false;
+                }
+            });
+        }
+        function next_1(){
+            document.getElementById("title").innerHTML = "数据库配置";
+            document.getElementById("page_5").style.display="none";
+            document.getElementById("page_8").style.display="inline";
+        }
+        function info(){
+            var db_host = $("#db_host").val();
+            var db_port = $("#db_port").val();
+            var db_user =$("#db_user").val();
+            var db_pwd = $("#db_pwd").val();
+            var db_name = $("#db_name").val();
+            var token = $("#token").val();
+            var iis = layer.confirm('您若点击确认，则会进行保存并进入下一步',{
+                title:'温馨提示',
+                btn:['同意','不同意'],
+                closeBtn:0
+            },function(){
+                layer.close(iis);
+                var ii = layer.load(0, {
+                    shade: [0.1, '#fff']
+                });
+                $.ajax({
+                    type: "POST",
+                    url: "./ajax.php?act=save_info",
+                    data:{
+                        db_host:db_host,
+                        db_port:db_port,
+                        db_user:db_user,
+                        db_pwd:db_pwd,
+                        db_name:db_name,
+                        token:token
+                    },
+                    dataType: 'json',
+                    success: function(data) {
+                        layer.close(ii);
+                        layer.msg(data.msg);
+                        if(data.code == 1){
+                            document.getElementById("page_8").style.display="none";
+                            document.getElementById("page_9").style.display="inline";
+                        }
+                    },
+                    error: function(data) {
+                        console.log(data);
+                        layer.close(ii);
+                        layer.msg('服务器错误！');
+                        return false;
+                    }
+                });
+            });
+        }
+        function mysql_1(post){
+            var ii = layer.load(0, {
+                shade: [0.1, '#fff']
+            });
+            $.ajax({
+                type: "POST",
+                data:{post:post},
+                url: "./ajax.php?act=check_mysql",
+                dataType: 'json',
+                success: function(data) {
+                    layer.close(ii);
+                    layer.msg(data.msg);
+                    if(data.code == 1){
+                        document.getElementById("page_10").style.display="none";
+                        document.getElementById("page_11").style.display="inline";
+                        document.getElementById("text_1").innerHTML = "数据库检测通过，请点击安装";
+                        document.getElementById("page_13").style.display="none";
+                    }else{
+                        document.getElementById("page_13").style.display="inline";
+                    }
+                },
+                error: function(data) {
+                    layer.close(ii);
+                    layer.msg('服务器错误！');
+                    return false;
+                }
+            });
+        }
+        function mysql(post){
+            if(post){
+                var iis = layer.confirm('您若点击确认，则会执行数据库导入操作',{
+                    title:'温馨提示',
+                    btn:['同意','不同意'],
+                    closeBtn:0
+                },function(){
+                    mysql_1(post);
+                });
+            }else{
+                mysql_1(post);
+            }
+        }
+        function next_2(){
+            var iis = layer.confirm('您若点击确认，则会执行数据库导入操作',{
+                title:'温馨提示',
+                btn:['同意','不同意'],
+                closeBtn:0
+            },function(){
+                layer.close(iis);
+                var ii = layer.load(0, {
+                    shade: [0.1, '#fff']
+                });
+                $.ajax({
+                    type: "GET",
+                    url: "./ajax.php?act=mysql",
+                    dataType: 'json',
+                    success: function(data) {
+                        layer.close(ii);
+                        if(data.code == 1){
+                            document.getElementById("page_9").style.display="none";
+                            document.getElementById("page_12").style.display="inline";
+                        }
+                    },
+                    error: function(data) {
+                        layer.close(ii);
+                        layer.msg('服务器错误！');
+                        return false;
+                    }
+                });
+            });
+        }
+        function account(){
+            var username = $("#username").val();
+            var password = $("#password").val();
+            var iis = layer.confirm('账号' + username + '，密码：' + password + '，确定吗？',{
+                title:'温馨提示',
+                btn:['确定','取消'],
+                closeBtn:0
+            },function(){
+                layer.close(iis);
+                var ii = layer.load(0, {
+                    shade: [0.1, '#fff']
+                });
+                $.ajax({
+                    type: "POST",
+                    data:{username:username,password:password},
+                    url: "./ajax.php?act=account",
+                    dataType: 'json',
+                    success: function(data) {
+                        layer.close(ii);
+                        layer.msg(data.msg);
+                        if(data.code == 1){
+                            document.getElementById("page_9").style.display="none";
+                            document.getElementById("page_12").style.display="inline";
+                            window.location.href = '/';
+                        }
+                    },
+                    error: function(data) {
+                        layer.close(ii);
+                        layer.msg('服务器错误！');
+                        return false;
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>

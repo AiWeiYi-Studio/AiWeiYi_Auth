@@ -1,0 +1,13 @@
+{
+    "path": "Bluestar",
+    "type": "index",
+    "name": "蓝色模板",
+    "assets":"./system/template/index/Bluestar/assets/",
+    "author": "爱唯逸网络科技",
+    "version": "1.0.0",
+    "website": "https://www.ukyun.cn",
+    "qq": "2874992246",
+    "time": "2017年6月23日",
+    "demo": "../system/template/index/Bluestar/demo.png",
+    "notice": "蓝色模板"
+}

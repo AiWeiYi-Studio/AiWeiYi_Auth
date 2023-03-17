@@ -1,0 +1,13 @@
+{
+    "path": "Simple",
+    "type": "index",
+    "name": "简约",
+    "author": "爱唯逸网络科技",
+    "assets":"./assets/LightYear/",
+    "version": "1.0.0",
+    "website": "https://www.ukyun.cn",
+    "qq": "2874992246",
+    "time": "2021年6月23日",
+    "demo": "../system/template/index/Simple/demo.png",
+    "notice": "超级简约模板"
+}

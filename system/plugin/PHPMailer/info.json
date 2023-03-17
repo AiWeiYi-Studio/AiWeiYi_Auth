@@ -1,0 +1,11 @@
+{
+    "path": "PHPMailer",
+    "name": "PHP邮件插件",
+    "icon":"https://avatars.githubusercontent.com/u/81561?s=48&v=4",
+    "author": "Synchro",
+    "version": "6.5.4",
+    "website": "https://github.com/PHPMailer/PHPMailer",
+    "qq": "2874992246",
+    "time": "2017年6月23日",
+    "notice": "用于在PHP环境中发送邮件"
+}

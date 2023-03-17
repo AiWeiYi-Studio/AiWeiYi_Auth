@@ -1,0 +1,13 @@
+{
+    "path": "NanYi",
+    "type": "index",
+    "name": "南逸美化模板V2.0",
+    "author": "爱唯逸网络科技",
+    "assets":"./system/template/index/NanYi/assets/",
+    "version": "2.0.0",
+    "website": "http://php.nanyinet.com",
+    "qq": "2874992246",
+    "time": "2022年04月29日",
+    "demo": "../system/template/index/NanYi/demo.png",
+    "notice": "该模板美化前台首页"
+}

@@ -1,0 +1,67 @@
+    .ew-banner {
+        max-width: 100vw;
+        overflow: hidden;
+        background: #fff;
+        color: #333;
+        position: relative;
+    }
+
+    .ew-banner:before {
+        display: none;
+    }
+
+    .ew-banner p {
+        color: #999;
+    }
+
+    .ew-banner img.shape {
+        -webkit-animation-duration: 5s;
+        animation-duration: 5s;
+    }
+
+    .ew-banner img {
+        pointer-events: none;
+    }
+
+    @media screen and (max-width: 768px) {
+        img.shape-main {
+            width: 90% !important;
+            max-width: 370px !important;
+            right: 15px !important;
+            top: 30px !important;
+        }
+
+        .ew-banner > .layui-container {
+            padding-top: 320px;
+            padding-bottom: 20px !important;
+            padding-right: 20px !important;
+        }
+
+        img.shape6 {
+            top: 510px !important;
+        }
+
+        img.shape4 {
+            left: 5px !important;
+            bottom: 300px !important;
+        }
+
+        .layui-logo > img {
+            top: 12px !important;
+        }
+
+        .ew-footer .img-group {
+            padding-left: 100px !important;
+            height: 103px !important;
+        }
+
+        .ew-footer .img-group > img {
+            width: 90px !important;
+            height: 90px !important;
+            top: 7px !important;
+        }
+    }
+
+    .product-card .product-cover > .product-cover-img {
+        background-position: 0 0;
+    }

@@ -1,0 +1,13 @@
+{
+    "path": "LayuiAdmin",
+    "type": "admin_login",
+    "name": "LayuiAdmin",
+    "assets":"../system/template/admin/login/LayuiAdmin/style/",
+    "author": "爱唯逸网络科技",
+    "version": "1.0.0",
+    "website": "https://web.857xx.cn",
+    "qq": "2874992246",
+    "time": "2021年6月23日",
+    "demo": "../system/template/admin/login/LayuiAdmin/demo.png",
+    "notice": "基于LayuiAdmin开发"
+}
